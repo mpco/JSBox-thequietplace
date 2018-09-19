@@ -75,9 +75,11 @@ $ui.render({
                         }
                     });
                     nextText()
-                    $audio.play({
-                        path: "assets/audio.mp3"
-                    });
+                    $delay(1.5, function () {
+                        $audio.play({
+                            path: "assets/audio.mp3"
+                        });
+                    })
                 }
             }
         }
@@ -176,7 +178,7 @@ function nextText() {
 
     // 倒数计时
     if (Number(stringList[textLabelStrIndex]["text"]) <= 30) {
-        var task = $delay(1.5, function () {
+        $delay(1.5, function () {
             nextText($(newLabelId));
         })
     }
